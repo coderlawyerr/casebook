@@ -12,10 +12,11 @@ class CustomCard extends StatelessWidget {
       height: 161,
       width: 371,
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(""),
-          const SizedBox(
-            width: 10,
+           Text(
+            text,
+            style: TextStyle(color: Colors.white),
           ),
           Image.asset("assets/bin.png"),
         ],

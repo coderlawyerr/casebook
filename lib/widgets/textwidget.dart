@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class CustomTextWidget extends StatelessWidget {
- const  CustomTextWidget({
+  const CustomTextWidget({
     super.key,
     required this.text,
   });
@@ -16,7 +16,7 @@ class CustomTextWidget extends StatelessWidget {
       text,
       style: const TextStyle(
         color: Colors.grey,
-        fontSize: 20,
+        fontSize: 18,
       ),
     );
   }

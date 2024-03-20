@@ -1,7 +1,14 @@
+/*
+burası sıfremı unuttum kısmı 
+
+
+*/
 import 'package:casebook/const/const.dart';
 import 'package:casebook/widgets/squre.dart';
+import 'package:casebook/wiew/welcome.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class ForgotPassword extends StatefulWidget {
@@ -16,18 +23,30 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back_ios),
-        title: const Text("Parolanızı Mı  Unuttunuz"),
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.grey,
+            ),
+            onPressed: () {
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => LoginPage()));
+            }),
+        title: const Text(
+          "Parolanızı Mı  Unuttunuz",
+          style: Constants.textStyle,
+        ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Column(
           children: [
             const SizedBox(
               height: 125,
             ),
             Center(child: CustomSquare()),
-            SizedBox(
+            const SizedBox(
               height: 100,
             ),
             const Text(
@@ -38,20 +57,22 @@ class _ForgotPasswordState extends State<ForgotPassword> {
               "Kodun Süresi Doluyor 5 sn",
               style: TextStyle(color: Colors.grey, fontSize: 15),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
-            Container(
-              child: Center(
-                child: Text(
-                  "DOĞRULAMA KODU TEKRAR GÖNDER",
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+            Center(
+              child: Container(
+                child: Center(
+                  child: Text(
+                    "DOĞRULAMA KODU TEKRAR GÖNDER",
+                    style: TextStyle(color: Colors.white, fontSize: 12),
+                  ),
                 ),
-              ),
-              width: 254,
-              height: 34,
-              decoration: BoxDecoration(
-                color: Colors.grey,
+                width: 254,
+                height: 34,
+                decoration: const BoxDecoration(
+                  color: Colors.grey,
+                ),
               ),
             )
           ],

@@ -1,5 +1,13 @@
+import 'package:casebook/wiew/add_product.dart';
 import 'package:casebook/wiew/forgot_password.dart';
 import 'package:casebook/wiew/overview.dart';
+import 'package:casebook/wiew/product.dart';
+import 'package:casebook/wiew/report.dart';
+import 'package:casebook/wiew/sales.dart';
+import 'package:casebook/wiew/splash.dart';
+import 'package:casebook/wiew/supplier_and_customer_add.dart';
+import 'package:casebook/wiew/things_todo.dart';
+import 'package:casebook/wiew/welcome.dart';
 
 import 'package:flutter/material.dart';
 
@@ -10,13 +18,13 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-       
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(scaffoldBackgroundColor: Color.fromARGB(145, 7, 3, 48)),
       title: 'Flutter Demo',
-      home: Overview(),
+      home: Splash(),
     );
   }
 }

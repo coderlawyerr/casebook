@@ -2,6 +2,8 @@ import 'package:casebook/const/const.dart';
 import 'package:casebook/widgets/button.dart';
 import 'package:casebook/widgets/textfield.dart';
 import 'package:casebook/widgets/textwidget.dart';
+import 'package:casebook/wiew/overview.dart';
+import 'package:casebook/wiew/product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -17,30 +19,56 @@ class _AddProductState extends State<AddProduct> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(Icons.arrow_back_ios),
-        title: Text("Ürün Ekle"),
+        backgroundColor: Colors.transparent,
+        leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.grey,
+            ),
+            onPressed: () {
+              Navigator.pushReplacement(
+                  context, MaterialPageRoute(builder: (context) => Overview()));
+            }),
+        title: const Text(
+          "Ürün Ekle",
+          style: Constants.textStyle,
+        ),
       ),
-      body:const Center(child: Column(
-        children: [
-            CustomTextWidget(text: "Ürün Adı"),
-            CustomTextField(),
-            Constants.sizedbox,
-            ///////////////
-             CustomTextWidget(text: "Ürün Alış Fiyatı"),
-            CustomTextField(),
-            Constants.sizedbox,
-            ///////////////
-            CustomTextWidget(text: "Ürün Satış Fiyatı"),
-            CustomTextField(),
-            Constants.sizedbox,
-            ///////////////
-               CustomTextWidget(text: "Adet"),
-            CustomTextField(),
-            Constants.sizedbox,
-            ////////////
-            CustomButton(text: "ONAYLA"),
-        ],
-      ))
+      body: const SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.all(15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomTextWidget(text: "Ürün Adı"),
+                CustomTextField(),
+                Constants.sizedbox,
+                ///////////////
+                CustomTextWidget(text: "Ürün Alış Fiyatı"),
+                CustomTextField(),
+                Constants.sizedbox,
+                ///////////////
+                CustomTextWidget(text: "Ürün Satış Fiyatı"),
+                CustomTextField(),
+                Constants.sizedbox,
+                ///////////////
+                CustomTextWidget(text: "Adet"),
+                CustomTextField(),
+                Constants.sizedbox,
+                Center(
+                  child: CustomButton(
+                    text: "ONAYLA",
+                    page: Product(),
+                  ),
+                ),
+                ////////////
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

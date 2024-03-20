@@ -27,14 +27,16 @@ environment:
 # dependencies can be manually updated by changing the version numbers below to
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
-dependencies:
-  flutter:
-    sdk: flutter
 
+
+
+   
+depencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
+  
 
 dev_dependencies:
   flutter_test:
@@ -59,8 +61,10 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-assets:
-  - assets/
+  assets:
+     - assets/
+dependencies:
+  pie_chart: ^5.4.0
   
 
 
